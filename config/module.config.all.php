@@ -1,5 +1,5 @@
 <?php
-return array(
+return [
     // routes
     'router'          => include 'module.config.routes.php',
     // services
@@ -12,4 +12,4 @@ return array(
     'view_helpers'    => include 'module.config.viewhelper.php',
     // apigility server
     'http_client'     => include 'module.config.httpclient.php',
-);
+];

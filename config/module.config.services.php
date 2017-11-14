@@ -1,11 +1,11 @@
 <?php
 namespace ApigilityClient;
 
-return array(
-    'aliases' => array(
-        'ApigilityClient\Http\Client' => 'apigility.client',
-    ),
-    'factories' => array(
+return [
+    'aliases' => [
+        \ApigilityClient\Http\Client::class => 'apigility.client',
+    ],
+    'factories' => [
         'apigility.client' => function ($sm) {
             $config = $sm->get('config');
             $clientConfig = $config['http_client'];
@@ -15,10 +15,10 @@ return array(
 
             return new Http\Client($client);
         }
-    ),
-    'invokables' => array(
-    ),
-    'shared' => array(
+    ],
+    'invokables' => [
+    ],
+    'shared' => [
         'apigility.client' => false,
-    ),
-);
+    ],
+];

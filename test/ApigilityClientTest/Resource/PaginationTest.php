@@ -11,11 +11,11 @@ class PaginationTest extends TestCase
 
     protected function setUp()
     {
-        $data = array(
+        $data = [
             'page_count'  => 1,
             'page_size'   => 5,
             'total_items' => 15,
-        );
+        ];
 
         $this->pagination = new Pagination($data);
     }

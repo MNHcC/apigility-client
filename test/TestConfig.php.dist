@@ -1,14 +1,14 @@
 <?php
-return array(
-    'modules' => array(
-        'ApigilityClient',
-    ),
-    'module_listener_options' => array(
-        'config_glob_paths'    => array(
-        ),
-        'module_paths' => array(
+return [
+    'modules' => [
+        MNHcC\ApigilityClient::class,
+    ],
+    'module_listener_options' => [
+        'config_glob_paths'    => [
+        ],
+        'module_paths' => [
             'module',
             'vendor',
-        ),
-    ),
-);
+        ],
+    ],
+];

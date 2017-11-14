@@ -1,5 +1,5 @@
 <?php
-namespace ApigilityClient;
+namespace MNHcC\ApigilityClient;
 
 class Version
 {
@@ -7,7 +7,7 @@ class Version
     /**
      * @var String
      */
-    const VERSION = '0.2.0';
+    const VERSION = '0.2.2';
 
     /**
      * Get current version

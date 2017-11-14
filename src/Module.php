@@ -1,5 +1,5 @@
 <?php
-namespace ApigilityClient;
+namespace MNHcC\ApigilityClient;
 
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface,
     Zend\ModuleManager\Feature\LocatorRegisteredInterface,
@@ -14,10 +14,10 @@ class Module implements
     public function getAutoloaderConfig()
     {
         return [
-            'Zend\Loader\ClassMapAutoloader' => [
+            \Zend\Loader\ClassMapAutoloader::class => [
                 __DIR__.'/../autoload_classmap.php',
             ],
-            'Zend\Loader\StandardAutoloader' => [
+            \Zend\Loader\StandardAutoloader::class => [
                 'namespaces' => [
                     __NAMESPACE__ => __DIR__.'/../src/'.str_replace('\\', '/', __NAMESPACE__),
                 ],

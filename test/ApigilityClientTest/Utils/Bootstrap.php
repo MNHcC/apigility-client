@@ -50,7 +50,7 @@ class Bootstrap
     public static function init()
     {
         // add vendor and module directory to module paths if exists
-        static::addModulePaths(array('vendor', 'module'));
+        static::addModulePaths(['vendor', 'module']);
 
         // init autoloader
         static::initAutoloader();
@@ -101,20 +101,23 @@ class Bootstrap
             $testConfig = include __DIR__ . '/../../TestConfig.php.dist';
         }
 
-        $baseConfig = array(
-            'module_listener_options' => array(
+        $baseConfig = [
+            'module_listener_options' => [
                 'module_paths' => static::$zf2ModulePaths,
-            ),
-        );
+            ],
+        ];
 
         $config = ArrayUtils::merge($baseConfig, $testConfig);
 
+        $smInfo = new \ReflectionClass(ServiceManager::class);
+        $isObjectParm = (bool) $smInfo->getConstructor()->getParameters()[0]->getClass();
+        $smConfig = new ServiceManagerConfig();
         // create service manager instance
-        $serviceManager = new ServiceManager(new ServiceManagerConfig());
+        $serviceManager = new ServiceManager($isObjectParm ? $smConfig : $smConfig->toArray());
 
         // set application configuration to service manager
         $serviceManager->setService('ApplicationConfig', $config);
-        $serviceManager->setFactory('ServiceListener', 'Zend\Mvc\Service\ServiceListenerFactory');
+        $serviceManager->setFactory('ServiceListener', \Zend\Mvc\Service\ServiceListenerFactory::class);
 
         /** @var $moduleManager \Zend\ModuleManager\ModuleManager */
         $moduleManager = $serviceManager->get('ModuleManager');
@@ -139,7 +142,7 @@ class Bootstrap
         if (static::$zf2ModulePaths === null) {
 
             // create paths container
-            static::$zf2ModulePaths = array(dirname(dirname(dirname(__DIR__))));
+            static::$zf2ModulePaths = [dirname(dirname(dirname(__DIR__)))];
         }
 
         // be sure we have a paths list

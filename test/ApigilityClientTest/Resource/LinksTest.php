@@ -13,12 +13,12 @@ class LinksTest extends TestCase
 
     protected function setUp()
     {
-        $data = array(
+        $data = [
             'self'  => new Level3Link('http://api.localhost/v1/endpoint'),
             'first' => new Level3Link('http://api.localhost/v1/endpoint'),
             'next'  => new Level3Link('http://api.localhost/v1/endpoint?page=2'),
             'last'  => new Level3Link('http://api.localhost/v1/endpoint?page=3'),
-        );
+        ];
 
         $this->links = new Links($data);
     }
