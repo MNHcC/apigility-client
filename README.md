@@ -5,12 +5,13 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/guilhermewop/apigility-client/badges/coverage.png?b=develop)](https://scrutinizer-ci.com/g/guilhermewop/apigility-client/?branch=develop)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
+**This is a fork of guilhermewop/apigility-client.**
 ApigilityClient is a lightweight library to consume Restful APIs built with [Apigility](http://apigility.org).
 
 ## Requirements
 
-* PHP 5.4.x
-* Zend Framework >= 2.3
+* PHP 5.6.x
+* Zend Framework >= 2.4/3.0
 * level3/resource = 0.0.1
 
 ## Installation
@@ -26,19 +27,19 @@ php composer.phar require guilhermewop/apigility-client:dev-master
 Put [Zend\Http\Client options](http://framework.zend.com/manual/current/en/modules/zend.http.client.html#configuration) into your **module.config.php** file:  
 
 ```php
-'http_client' => array(
+'http_client' => [
     'uri' => 'https://localhost:8888',
-    'options' => array(
+    'options' => [
         'timeout'       => 60,
         'sslverifypeer' => false,
         'keepalive'     => true,
-        'adapter'       => 'Zend\Http\Client\Adapter\Socket',
-    ),
-    'headers' => array(
+        'adapter'       => \Zend\Http\Client\Adapter\Socket::class,
+    ],
+    'headers' => [
         'Accept'       => 'application/hal+json',
         'Content-Type' => 'application/json',
-    ),
-)
+    ],
+]
 ```
 
 ## Goals
