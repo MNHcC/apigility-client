@@ -46,7 +46,7 @@
     },
     "autoload": {
         "psr-4": {
-            "\\MNHcC\\ApigilityClient\\": "src/"
+            "MNHcC\\ApigilityClient\\": "src/"
         },
         "classmap": [
             "./Module.php"
