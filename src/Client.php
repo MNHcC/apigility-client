@@ -60,7 +60,7 @@ final class Client implements ClientInterface
      * @param String $path Example: "/v1/endpoint"
      * @param Array $headers
      */
-    private function doRequest($path, $headers = array())
+    private function doRequest($path, $headers = [])
     {
         $this->zendClient->getUri()->setPath($path);
 
@@ -81,7 +81,7 @@ final class Client implements ClientInterface
     /**
      * {@inheritdoc}
      */
-    public function get($path, array $data = array(), array $headers = array())
+    public function get($path, array $data = [], array $headers = [])
     {
         $this->zendClient->setMethod('GET')
                          ->setParameterGet($data);
@@ -92,7 +92,7 @@ final class Client implements ClientInterface
     /**
      * {@inheritdoc}
      */
-    public function post($path, array $data, array $headers = array())
+    public function post($path, array $data, array $headers = [])
     {
         $this->zendClient->setMethod('POST')
                          ->setRawBody(json_encode($data));
@@ -103,7 +103,7 @@ final class Client implements ClientInterface
     /**
      * {@inheritdoc}
      */
-    public function put($path, array $data, array $headers = array())
+    public function put($path, array $data, array $headers = [])
     {
         $this->zendClient->setMethod('PUT')
                          ->setRawBody(json_encode($data));
@@ -114,7 +114,7 @@ final class Client implements ClientInterface
     /**
      * {@inheritdoc}
      */
-    public function patch($path, array $data, array $headers = array())
+    public function patch($path, array $data, array $headers = [])
     {
         $this->zendClient->setMethod('PATCH')
                          ->setRawBody(json_encode($data));
@@ -125,7 +125,7 @@ final class Client implements ClientInterface
     /**
      * {@inheritdoc}
      */
-    public function delete($path, array $headers = array())
+    public function delete($path, array $headers = [])
     {
         $this->zendClient->setMethod('DELETE');
 

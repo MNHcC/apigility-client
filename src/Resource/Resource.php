@@ -17,7 +17,7 @@ class Resource
 
     private $links;
 
-    private $data = array();
+    private $data = [];
 
     public function __construct(Level3Resource $resource)
     {

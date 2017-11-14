@@ -11,7 +11,7 @@ interface ClientInterface
      *
      * @return Response
      */
-    public function get($path, array $data = array(), array $headers = array());
+    public function get($path, array $data = [], array $headers = []);
 
     /**
      * Send a POST request
@@ -21,7 +21,7 @@ interface ClientInterface
      *
      * @return Response
      */
-    public function post($path, array $data, array $headers = array());
+    public function post($path, array $data, array $headers = []);
 
     /**
      * Send a PUT request
@@ -31,7 +31,7 @@ interface ClientInterface
      *
      * @return Response
      */
-    public function put($path, array $data, array $headers = array());
+    public function put($path, array $data, array $headers = []);
 
     /**
      * Send a PATCH request
@@ -41,7 +41,7 @@ interface ClientInterface
      *
      * @return Response
      */
-    public function patch($path, array $data, array $headers = array());
+    public function patch($path, array $data, array $headers = []);
 
     /**
      * Send a DELETE request
@@ -50,6 +50,6 @@ interface ClientInterface
      *
      * @return Response
      */
-    public function delete($path, array $headers = array());
+    public function delete($path, array $headers = []);
 
 }

@@ -14,7 +14,7 @@ final class Links
     /**
      * @var Array
      */
-    private $links = array();
+    private $links = [];
 
     public function __construct(array $links)
     {
