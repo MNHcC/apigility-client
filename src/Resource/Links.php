@@ -1,7 +1,7 @@
 <?php
-namespace ApigilityClient\Resource;
+namespace MNHcC\ApigilityClient\Resource;
 
-use ApigilityClient\Exception\UnexpectedValueException;
+use MNHcC\ApigilityClient\Exception\UnexpectedValueException;
 
 final class Links
 {

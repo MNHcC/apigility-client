@@ -1,7 +1,7 @@
 <?php
-namespace ApigilityClient\Http\Response\Content;
+namespace MNHcC\ApigilityClient\Http\Response\Content;
 
-use ApigilityClient\Http\Response\Content\ContentInterface;
+use MNHcC\ApigilityClient\Http\Response\Content\ContentInterface;
 
 abstract class AbstractContent implements ContentInterface
 {

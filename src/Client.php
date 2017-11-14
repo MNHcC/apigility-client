@@ -1,9 +1,9 @@
 <?php
-namespace ApigilityClient\Http;
+namespace MNHcC\ApigilityClient\Http;
 
-use ApigilityClient\Exception\RuntimeException,
-    ApigilityClient\Http\Response,
-    ApigilityClient\Http\Client\ClientInterface;
+use MNHcC\ApigilityClient\Exception\RuntimeException,
+    MNHcC\ApigilityClient\Http\Response,
+    MNHcC\ApigilityClient\Http\Client\ClientInterface;
 
 use Zend\Http\Client as ZendHttpClient,
     Zend\Http\Client\Adapter\Curl,

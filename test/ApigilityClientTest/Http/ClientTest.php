@@ -3,8 +3,8 @@ namespace ApigilityClientTest\Http;
 
 use ApigilityClientTest\Framework\TestCase;
 
-use ApigilityClient\Http\Client as HttpClient,
-    ApigilityClient\Http\Response;
+use MNHcC\ApigilityClient\Http\Client as HttpClient,
+    MNHcC\ApigilityClient\Http\Response;
 
 use Zend\Http\Client as ZendHttpClient;
 

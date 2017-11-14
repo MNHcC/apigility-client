@@ -7,9 +7,9 @@ use Zend\Json\Decoder as JsonDecoder,
 use ApigilityClientTest\Framework\TestCase,
     ApigilityClientTest\Utils\FileLoader;
 
-use ApigilityClient\Resource\Pagination,
-    ApigilityClient\Resource\Resource,
-    ApigilityClient\Resource\Links;
+use MNHcC\ApigilityClient\Resource\Pagination,
+    MNHcC\ApigilityClient\Resource\Resource,
+    MNHcC\ApigilityClient\Resource\Links;
 
 use Level3\Resource\Format\Reader\HAL\JsonReader as HalJsonReader;
 
@@ -36,12 +36,12 @@ class ResourceTest extends TestCase
 
     public function testGetPagination()
     {
-        $this->assertInstanceOf('ApigilityClient\Resource\Pagination', $this->resource->getPagination());
+        $this->assertInstanceOf('MNHcC\ApigilityClient\Resource\Pagination', $this->resource->getPagination());
     }
 
     public function testGetLinks()
     {
-        $this->assertInstanceOf('ApigilityClient\Resource\Links', $this->resource->getLinks());
+        $this->assertInstanceOf('MNHcC\ApigilityClient\Resource\Links', $this->resource->getLinks());
     }
 
 }

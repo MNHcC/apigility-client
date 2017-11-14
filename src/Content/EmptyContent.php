@@ -1,5 +1,5 @@
 <?php
-namespace ApigilityClient\Http\Response\Content;
+namespace MNHcC\ApigilityClient\Http\Response\Content;
 
 use Zend\Http\Response as HttpResponse,
     Zend\Http\Client as HttpClient;

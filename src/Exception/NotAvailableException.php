@@ -1,5 +1,5 @@
 <?php
-namespace ApigilityClient\Exception;
+namespace MNHcC\ApigilityClient\Exception;
 
 class NotAvailableException extends \Exception implements ExceptionInterface
 {

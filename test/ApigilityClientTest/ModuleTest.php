@@ -2,7 +2,7 @@
 namespace ApigilityClientTest;
 
 use ApigilityClientTest\Framework\TestCase;
-use ApigilityClient\Module;
+use MNHcC\ApigilityClient\Module;
 use Traversable;
 
 class ModuleTest extends TestCase

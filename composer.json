@@ -45,8 +45,8 @@
         "fabpot/php-cs-fixer": "0.4.*"
     },
     "autoload": {
-        "psr-0": {
-            "ApigilityClient": "src/"
+        "psr-4": {
+            "\\MNHcC\\ApigilityClient\\": "src/"
         },
         "classmap": [
             "./Module.php"

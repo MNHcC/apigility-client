@@ -1,10 +1,10 @@
 <?php
-namespace ApigilityClient\Http\Response;
+namespace MNHcC\ApigilityClient\Http\Response;
 
 use Zend\Http\Client as ZendHttpClient,
     Zend\Http\Response as ZendHttpResponse;
 
-use ApigilityClient\Exception\RuntimeException;
+use MNHcC\ApigilityClient\Exception\RuntimeException;
 
 class TriggerException
 {
@@ -15,7 +15,7 @@ class TriggerException
      * @param  Zend\Http\Client   $client
      * @param  Zend\Http\Response $response
      * @param  string|null        $message
-     * @throws ApigilityClient\Exception\RuntimeException
+     * @throws MNHcC\ApigilityClient\Exception\RuntimeException
      */
     public function __construct(ZendHttpClient $client, ZendHttpResponse $response, $message = null)
     {

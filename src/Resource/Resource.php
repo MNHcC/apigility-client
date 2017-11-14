@@ -1,12 +1,12 @@
 <?php
-namespace ApigilityClient\Resource;
+namespace MNHcC\ApigilityClient\Resource;
 
 use Level3\Resource\Resource as Level3Resource,
     Level3\Resource\Link as Level3Link;
 
-use ApigilityClient\Exception\RuntimeException,
-    ApigilityClient\Resource\Pagination,
-    ApigilityClient\Resource\Content;
+use MNHcC\ApigilityClient\Exception\RuntimeException,
+    MNHcC\ApigilityClient\Resource\Pagination,
+    MNHcC\ApigilityClient\Resource\Content;
 
 
 class Resource

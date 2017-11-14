@@ -1,13 +1,13 @@
 <?php
-namespace ApigilityClient\Http;
+namespace MNHcC\ApigilityClient\Http;
 
 use Zend\Http\Client as ZendHttpClient,
     Zend\Http\Response as ZendHttpResponse;
 
-use ApigilityClient\Exception\RuntimeException,
-    ApigilityClient\Http\Response\TriggerException,
-    ApigilityClient\Http\Response\Content\HalJson,
-    ApigilityClient\Http\Response\Content\EmptyContent;
+use MNHcC\ApigilityClient\Exception\RuntimeException,
+    MNHcC\ApigilityClient\Http\Response\TriggerException,
+    MNHcC\ApigilityClient\Http\Response\Content\HalJson,
+    MNHcC\ApigilityClient\Http\Response\Content\EmptyContent;
 
 final class Response
 {
@@ -78,7 +78,7 @@ final class Response
     /**
      * Check response status
      *
-     * @throws ApigilityClient\Exception\RuntimeException
+     * @throws MNHcC\ApigilityClient\Exception\RuntimeException
      * @return Bool
      */
     private function checkResponseStatus()

@@ -1,5 +1,5 @@
 <?php
-namespace ApigilityClient\Http\Client;
+namespace MNHcC\ApigilityClient\Http\Client;
 
 interface ClientInterface
 {

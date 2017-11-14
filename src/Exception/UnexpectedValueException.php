@@ -1,5 +1,5 @@
 <?php
-namespace ApigilityClient\Exception;
+namespace MNHcC\ApigilityClient\Exception;
 
 class UnexpectedValueException extends \InvalidArgumentException implements ExceptionInterface
 {

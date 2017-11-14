@@ -3,7 +3,7 @@ namespace ApigilityClientTest\Resource;
 
 use ApigilityClientTest\Framework\TestCase;
 
-use ApigilityClient\Resource\Links;
+use MNHcC\ApigilityClient\Resource\Links;
 
 use Level3\Resource\Link as Level3Link;
 

@@ -1,5 +1,5 @@
 <?php
-namespace ApigilityClient\Resource;
+namespace MNHcC\ApigilityClient\Resource;
 
 final class Pagination
 {

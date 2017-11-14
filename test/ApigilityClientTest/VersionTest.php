@@ -3,7 +3,7 @@ namespace ApigilityClientTest;
 
 use ApigilityClientTest\Framework\TestCase;
 
-use ApigilityClient\Version;
+use MNHcC\ApigilityClient\Version;
 
 class VersionTest extends TestCase
 {

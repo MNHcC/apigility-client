@@ -3,7 +3,7 @@ namespace ApigilityClientTest\Resource;
 
 use ApigilityClientTest\Framework\TestCase;
 
-use ApigilityClient\Resource\Pagination;
+use MNHcC\ApigilityClient\Resource\Pagination;
 
 class PaginationTest extends TestCase
 {
