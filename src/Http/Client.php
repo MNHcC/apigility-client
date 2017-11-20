@@ -1,5 +1,5 @@
 <?php
-namespace MNHcC\ApigilityClient\Http\Client;
+namespace MNHcC\ApigilityClient\Http;
 
 use MNHcC\ApigilityClient\Exception\RuntimeException,
     MNHcC\ApigilityClient\Http\Response,

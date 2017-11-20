@@ -12,10 +12,7 @@ class ModuleTest extends TestCase
     {
         $module = new Module();
         $config = $module->getAutoloaderConfig();
-
-        if (!is_array($config) && !($config instanceof Traversable)) {
-            $this->fail('getAutoloaderConfig expected to return array or Traversable');
-        }
+        $this->assertFalse(!is_array($config) && !($config instanceof Traversable), 'getAutoloaderConfig expected to return array or Traversable');
     }
 
     public function testGetConfig()
