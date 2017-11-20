@@ -1,12 +1,15 @@
 <?php
+
 namespace MNHcC\ApigilityClient;
+
+const APIGILITY_CLIENT_SERVICE_NAME = 'apigility.client';
 
 return [
     'aliases' => [
-        Http\Client::class => 'apigility.client',
+        Http\Client::class => APIGILITY_CLIENT_SERVICE_NAME,
     ],
     'factories' => [
-        'apigility.client' => function ($sm) {
+        APIGILITY_CLIENT_SERVICE_NAME => function ($sm) {
             $config = $sm->get('config');
             $clientConfig = $config['http_client'];
 
@@ -19,6 +22,6 @@ return [
     'invokables' => [
     ],
     'shared' => [
-        'apigility.client' => false,
+        APIGILITY_CLIENT_SERVICE_NAME => false,
     ],
 ];
