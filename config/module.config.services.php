@@ -1,9 +1,9 @@
 <?php
-namespace ApigilityClient;
+namespace MNHcC\ApigilityClient;
 
 return [
     'aliases' => [
-        \ApigilityClient\Http\Client::class => 'apigility.client',
+        Http\Client::class => 'apigility.client',
     ],
     'factories' => [
         'apigility.client' => function ($sm) {

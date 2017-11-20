@@ -1,5 +1,5 @@
 <?php
-namespace MNHcC\ApigilityClient\Http;
+namespace MNHcC\ApigilityClient\Http\Client;
 
 use MNHcC\ApigilityClient\Exception\RuntimeException,
     MNHcC\ApigilityClient\Http\Response,
@@ -7,9 +7,10 @@ use MNHcC\ApigilityClient\Exception\RuntimeException,
 
 use Zend\Http\Client as ZendHttpClient,
     Zend\Http\Client\Adapter\Curl,
-    Zend\Http\Exception\RuntimeException as ZendHttpRuntimeException;
+    Zend\Http\Exception\RuntimeException as ZendHttpRuntimeException,
+    Zend\Http\Request as ZendHttpRequest;
 
-final class Client implements ClientInterface
+class Client implements ClientInterface
 {
 
     /**
@@ -20,7 +21,7 @@ final class Client implements ClientInterface
     /**
      * @var Zend\Http\Client Instance
      */
-    private $zendClient;
+    protected $zendClient;
 
     public function __construct(ZendHttpClient $client = null)
     {
@@ -31,14 +32,6 @@ final class Client implements ClientInterface
 
     public function setZendClient(ZendHttpClient $client)
     {
-        $host = $client->getUri()->getHost();
-
-        if (empty($host)) {
-            throw new ZendHttpRuntimeException(
-                'Host not defined.'
-            );
-        }
-
         $this->zendClient = $client;
 
         return $this;
@@ -60,16 +53,24 @@ final class Client implements ClientInterface
      * @param String $path Example: "/v1/endpoint"
      * @param Array $headers
      */
-    private function doRequest($path, $headers = [])
+    protected function doRequest($path, $headers = [])
     {
-        $this->zendClient->getUri()->setPath($path);
+        $host = $this->getZendClient()->getUri()->getHost();
 
-        $this->zendClient->getRequest()->getHeaders()->addHeaders($headers);
+        if (empty($host)) {
+            throw new ZendHttpRuntimeException(
+                'Host not defined.'
+            );
+        }
+        
+        $this->getZendClient()->getUri()->setPath($path);
 
-        $zendHttpResponse = $this->zendClient->send();
+        $this->getZendClient()->getRequest()->getHeaders()->addHeaders($headers);
+
+        $zendHttpResponse = $this->getZendClient()->send();
 
         try {
-            $response = new Response($this->zendClient, $zendHttpResponse);
+            $response = new Response($this->getZendClient(), $zendHttpResponse);
             $content = $response->getContent();
         } catch (ZendHttpRuntimeException $e) {
 	    throw $e;
@@ -83,7 +84,7 @@ final class Client implements ClientInterface
      */
     public function get($path, array $data = [], array $headers = [])
     {
-        $this->zendClient->setMethod('GET')
+        $this->getZendClient()->setMethod(ZendHttpRequest::METHOD_GET)
                          ->setParameterGet($data);
 
         return $this->doRequest($path, $headers);
@@ -94,7 +95,7 @@ final class Client implements ClientInterface
      */
     public function post($path, array $data, array $headers = [])
     {
-        $this->zendClient->setMethod('POST')
+        $this->getZendClient()->setMethod(ZendHttpRequest::METHOD_POST)
                          ->setRawBody(json_encode($data));
 
         return $this->doRequest($path, $headers);
@@ -105,7 +106,7 @@ final class Client implements ClientInterface
      */
     public function put($path, array $data, array $headers = [])
     {
-        $this->zendClient->setMethod('PUT')
+        $this->getZendClient()->setMethod(ZendHttpRequest::METHOD_PUT)
                          ->setRawBody(json_encode($data));
 
         return $this->doRequest($path, $headers);
@@ -116,7 +117,7 @@ final class Client implements ClientInterface
      */
     public function patch($path, array $data, array $headers = [])
     {
-        $this->zendClient->setMethod('PATCH')
+        $this->getZendClient()->setMethod(ZendHttpRequest::METHOD_PATCH)
                          ->setRawBody(json_encode($data));
 
         return $this->doRequest($path, $headers);
@@ -127,9 +128,10 @@ final class Client implements ClientInterface
      */
     public function delete($path, array $headers = [])
     {
-        $this->zendClient->setMethod('DELETE');
+        $this->getZendClient()->setMethod(ZendHttpRequest::METHOD_DELETE);
 
         return $this->doRequest($path, $headers);
     }
 
+    
 }
