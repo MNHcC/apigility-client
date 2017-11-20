@@ -26,7 +26,7 @@ class TriggerException
             $error->status,
             $error->title,
             $message ? $message.PHP_EOL.$error->detail : $error->detail 
-        ));
+        ), $error->status, null, $error);
     }
     
     protected function generateErrorObject($response) {
