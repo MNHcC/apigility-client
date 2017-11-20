@@ -43,7 +43,7 @@ final class Response
             if (204 == $this->httpResponse->getStatusCode()) {
                 $this->strategyContent = new EmptyContent($this->httpClient, $this->httpResponse);
             } else {
-                $contentType = $this->httpResponse->getHeaders()->get('Content-Type')->getFieldValue();
+                $contentType = $this->httpResponse->getHeaders()->get('Content-Type')?$this->httpResponse->getHeaders()->get('Content-Type')->getFieldValue() : 'none';
 
                 switch (trim($contentType)) {
                     case HalJson::CONTENT_TYPE :

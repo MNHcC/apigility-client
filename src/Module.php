@@ -5,6 +5,8 @@ use Zend\ModuleManager\Feature\AutoloaderProviderInterface,
     Zend\ModuleManager\Feature\LocatorRegisteredInterface,
     Zend\ModuleManager\Feature\ConfigProviderInterface;
 
+const APIGILITY_CLIENT_SERVICE_NAME = 'apigility.client';
+
 class Module implements
     AutoloaderProviderInterface,
     LocatorRegisteredInterface,

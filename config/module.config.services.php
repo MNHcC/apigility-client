@@ -2,8 +2,6 @@
 
 namespace MNHcC\ApigilityClient;
 
-const APIGILITY_CLIENT_SERVICE_NAME = 'apigility.client';
-
 return [
     'aliases' => [
         Http\Client::class => APIGILITY_CLIENT_SERVICE_NAME,
